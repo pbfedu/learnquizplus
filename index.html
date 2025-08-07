@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LearnQuiz+ | Platform</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Feather&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="progress-bar-container">
+        <div id="progress-bar" class="progress-bar"></div>
+    </div>
+    
+    <main class="container">
+        <div id="upload-container">
+            <h1 class="title">Sube tu archivo de examen</h1>
+            <p>Selecciona un archivo .txt con las preguntas para comenzar el quiz.</p>
+            <input type="file" id="file-input" accept=".txt">
+            <label for="file-input" class="file-label">Seleccionar archivo</label>
+        </div>
+
+        <div id="loading-screen" class="hidden">
+            <div class="loader-container">
+                <div class="loader"></div>
+            </div>
+            <p>Cargando preguntas...</p>
+        </div>
+
+        <div id="countdown-screen" class="hidden">
+            <div id="countdown-number">3</div>
+        </div>
+
+        <div id="quiz-container" class="hidden">
+            <h1 class="title">LearnQuiz+</h1>
+            <div id="question-container" class="question-container">
+                <h2 id="question-text"></h2>
+                <div id="options-container" class="options-container"></div>
+                <div id="feedback-container" class="feedback-container">
+                    <div id="feedback-text"></div>
+                    <button id="check-button" class="check-button" disabled>Verificar</button>
+                </div>
+            </div>
+            <div id="final-screen" class="final-screen hidden">
+                <h2 id="final-title">Quiz completado</h2>
+                <button class="claim-xp-button">¡RECLAMA TU XP!</button>
+            </div>
+        </div>
+    </main>
+    
+    <audio id="correct-sound" src="sound/correct.wav"></audio>
+    <audio id="incorrect-sound" src="sound/incorrect.wav"></audio>
+    <audio id="final-sound" src="sound/end.wav"></audio>
+    <audio id="match-correct-sound" src="sound/match.mp3"></audio>
+
+    <script src="script.js"></script>
+</body>
+</html>
